@@ -41,7 +41,7 @@ function github_api_get {
 
 # Function to list repositories in the organization or user profile
 function list_repositories {
-    local endpoint="users/${OWNER_NAME}/repos" # Change this to "orgs/${OWNER_NAME}/repos" for organizations
+    local endpoint="users/${OWNER_NAME}/repos"
 
     repositories="$(github_api_get "${endpoint}" | jq -r '.[] | .name')"
 
